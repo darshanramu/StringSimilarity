@@ -119,11 +119,15 @@ public class StringSimilarity {
 					best_str2=best_str2_nw;
 				}
 			}
-			//writer.println(source1_filename+":"+str1.substring(0, str1.indexOf('-'))+"\t"+source2_filename+":"+best_str2.substring(0, best_str2.indexOf('-')));
-			writer.println("s1: "+str1+"\ts2: "+best_str2+" dist: "+max_so_far);
-			writer.println("s1: "+str1+"\ts2: "+best_str2_jw+" dist: "+max_so_far_jw);
-			writer.println("s1: "+str1+"\ts2: "+best_str2_sw+" dist: "+max_so_far_sw);
-			writer.println("s1: "+str1+"\ts2: "+best_str2_nw+" dist: "+max_so_far_nw);
+			//Empirical analysis of threshold shows 0.88 to be better threshold to cover all records in groundtruth
+			if(max_so_far>0.88){
+				writer.println(source1_filename+":"+str1.substring(0, str1.indexOf('-'))+"\t"+source2_filename+":"+best_str2.substring(0, best_str2.indexOf('-')));
+				//writer.println("s1: "+str1+"\ts2: "+best_str2+" dist: "+max_so_far);
+			}
+			
+			//writer.println("s1: "+str1+"\ts2: "+best_str2_jw+" dist: "+max_so_far_jw);
+			//writer.println("s1: "+str1+"\ts2: "+best_str2_sw+" dist: "+max_so_far_sw);
+			//writer.println("s1: "+str1+"\ts2: "+best_str2_nw+" dist: "+max_so_far_nw);
 		}
 		
 		
