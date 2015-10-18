@@ -38,11 +38,7 @@ public class StringSimilarity {
 		    source1.add(s1.nextLine());
 		}
 		s1.close();
-		/*
-		for(String line:source1)
-		{
-			System.out.println(line);
-		}*/
+		
 		String source2_filename = args[1];
 		Scanner s2=null;
 		try {
@@ -56,11 +52,7 @@ public class StringSimilarity {
 		    source2.add(s2.nextLine());
 		}
 		s2.close();
-		/*
-		for(String line:source2)
-		{
-			System.out.println(line);
-		}*/
+		
 		AbstractStringMetric sw = new SmithWaterman();
 		AbstractStringMetric jw = new JaroWinkler();
 		AbstractStringMetric nw = new NeedlemanWunch();
